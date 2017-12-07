@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Merry Christmas</title>
+      <script>
+          function validateField(first)
+          {
+            if(first == "")
+            {
+              alert("Name must be filled"); <!-- style this -->
+            }
+            else {
+                var link = document.getElementById("whatsapp");
+                var message = "Touch this blue line and see the magic \n awesomegreetings.com/?yourname=" + first;
+                link.setAttribute('href','whatsapp://send?text=' + message);
+            }
+          }
+      </script>
+</head>
+<body onload="load()">
+  <script>
+  function load() {
+    let searchParams = new URLSearchParams(window.location.search);
+    document.getElementById("Yourname").innerHTML = searchParams.get('yourname');
+  }
+
+  </script>
+<!-- Advt here -->
+<i id="Yourname"> abcd</i>
+<br/>
+<img src="christmas.jpg" alt="Greetings">
+<br/>
+<form>Send it in whatsapp with your name
+  <input type="text" name="yourname" id="yourname">
+  <input type="submit" value="Submit" onclick="validateField(document.getElementById('yourname').value); return false;">
+</form>
+<a href="whatsapp://send?text=yoyoyo" id="whatsapp" class="bla">Click here to share on whatsapp</a>
+<!-- Advt here -->
+</body>
+</html>
