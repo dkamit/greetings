@@ -11,8 +11,10 @@
             }
             else {
                 var link = document.getElementById("whatsapp");
-                var message = "Touch this blue line and see the magic \n awesomegreetings.com/?yourname=" + first;
+                var message = "Touch this blue line and see the magic \n http://amazinggreetings.com.s3-website.ap-south-1.amazonaws.com/?yourname=" + first;
                 link.setAttribute('href','whatsapp://send?text=' + message);
+                var twitterLink = document.getElementById("twitter");
+                twitterLink.setAttribute('href', 'https://twitter.com/intent/tweet?text=' + message);
             }
           }
       </script>
@@ -35,6 +37,7 @@
   <input type="submit" value="Submit" onclick="validateField(document.getElementById('yourname').value); return false;">
 </form>
 <a href="whatsapp://send?text=yoyoyo" id="whatsapp" class="bla">Click here to share on whatsapp</a>
+<a href="https://twitter.com/intent/tweet?text=" id="twitter" data-size="large">Tweet</a>
 <!-- Advt here -->
 </body>
 </html>
